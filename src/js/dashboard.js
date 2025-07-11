@@ -16,4 +16,7 @@ $btnLogout.addEventListener ("submit", (event) => {
     logout()
 })
 
+async function logout() {
+    
+}
 

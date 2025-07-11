@@ -1,6 +1,6 @@
 
 const $loginForm = document.getElementById("login-form");
-const $email = document.getElementById("email")
+const $users = document.getElementById("email")
 const $password = document.getElementById("password")
 
 $loginForm.addEventListener("submit", (event) => {
@@ -9,11 +9,11 @@ $loginForm.addEventListener("submit", (event) => {
 })
 
 async function login() {
-    let response = await fetch(`http://localhost:3000/users?email=${$email.value}`)
+    let response = await fetch(`http://localhost:3000/users?email=${$users.value}`)
     let data = await response.json()
 
     if (data.length == 0) {
-        alert("Correo inexistente")
+        alert("Su usuario no existe")
     }
 
     if (data[0].password === $password.value) {
@@ -21,15 +21,12 @@ async function login() {
         localStorage.setItem("currentUser", JSON.stringify(data[0]))
         window.location.href = "../views/dashboard.html"
 
-
-        alert("login exitoso")
-
-
-
+        alert("Login exitoso")
 
     } else{
-        alert("contraseña equivocada")
+        alert("Contraseña equivocada")
     }
-
-
 }
+
+
+
