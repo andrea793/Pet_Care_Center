@@ -1,29 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
+  <!-- SEO and metadata -->
   <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="¿Necesitas un lugar para que tus mascotas se sientan como en casa? ¡Bienvenido a nuestra aplicación de cuidado de mascotas! Aquí podrás registrarte, iniciar sesión y gestionar el cuidado de tus mascotas con facilidad.">
-    <meta name="keywords" content="pets, users, names, system, pet care, center care, register.">
-    <meta name="sitedomain" content="https://github.com/giselle-01/Pet_Care_Center.git">
-    <meta name="organization" content="giselle-01">
-    <meta name="author" content="Giselle Andrea Palencia Toro">
-    <meta name="designer" content="Giselle Andrea Palencia Toro">
-    <meta name="copyright" content="© 2025 giselle-01. All rights reserved">
-    <meta name="robots" content="index,follow">
-    <meta name="googlebot" content="index,follow">
-    <meta name="revisit-after" content="15days">
-    <meta name="theme-color" content="#ffffff">
-  <title>Inicio</title>
-  <link rel="stylesheet" href="./src/css/index.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="¿Necesitas un lugar para que tus mascotas se sientan como en casa? ¡Bienvenido a nuestra aplicación de cuidado de mascotas! Aquí podrás registrarte, iniciar sesión y gestionar el cuidado de tus mascotas con facilidad.">
+  <meta name="keywords" content="pets, users, names, system, pet care, center care, register.">
+  <meta name="sitedomain" content="https://github.com/giselle-01/Pet_Care_Center.git">
+  <meta name="organization" content="giselle-01">
+  <meta name="author" content="Giselle Andrea Palencia Toro">
+  <meta name="designer" content="Giselle Andrea Palencia Toro">
+  <meta name="copyright" content="© 2025 giselle-01. All rights reserved">
+  <meta name="robots" content="index,follow">
+  <meta name="googlebot" content="index,follow">
+  <meta name="revisit-after" content="15days">
+  <meta name="theme-color" content="#ffffff">
+
+  <link rel="stylesheet" href="src/css/style.css" />
+  <title>PetCare Center</title>
 </head>
+
 <body>
-  <div class="container">
-    <h1>Bienvenido a la App</h1>
-    <div class="buttons">
-      <a href="src/views/login.html" class="btn">Iniciar Sesión</a>
-      <a href="src/views/register.html" class="btn">Registrarse</a>
-    </div>
+  <section id="landing">
+    <header class="landing-header">
+      <h1>🐾 PetCare Center</h1>
+      <nav>
+        <button id="go-to-login">Iniciar sesión</button>
+        <button id="go-to-register">Registrarse</button>
+      </nav>
+    </header>
+
+    <main class="landing-main">
+      <section class="landing-text">
+        <h2>Tu mascota merece vacaciones también</h2>
+        <p>En <strong>PetCare Center</strong> cuidamos de tu peludo amigo como si fuera nuestro. Mientras tú te relajas,
+          nosotros nos encargamos de su felicidad, comodidad y bienestar.</p>
+        <div class="landing-cta">
+          <button id="cta-login">Ya tengo cuenta</button>
+          <button id="cta-register">Quiero registrarme</button>
+        </div>
+      </section>
+
+      <div class="landing-image">
+        <img src="https://cdn.pixabay.com/photo/2017/09/25/13/12/dog-2785074_1280.jpg" alt="Perro feliz en cuidado" />
+      </div>
+    </main>
+  </section>
+
+  <footer class="landing-footer">
+    <p>&copy; 2025 PetCare Center. Todos los derechos reservados.</p>
+    <address>
+      Email:
+      <a href="mailto:soporte@petcare_center.com">soporte@petcare_center.com</a>
+    </address>
+  </footer>
+
+  <!-- Modal de autenticación (Login / Registro) -->
+  <div id="auth-modal" style="display: none;">
+    <form id="auth-form">
+      <h2 id="form-title">Login</h2>
+      <div id="message"></div>
+      <div>
+        <input type="text" id="username" placeholder="Nombre de usuario" required />
+      </div>
+      <div>
+        <input type="password" id="password" placeholder="Contraseña" required />
+      </div>
+      <div id="name-field" class="hidden">
+        <input type="text" id="fullname" placeholder="Nombre completo" />
+      </div>
+      <button id="submit-btn" type="submit">Iniciar sesión</button>
+      <a href="#" id="toggle-form">¿No tienes cuenta? <span>Regístrate</span></a>
+    </form>
   </div>
+
+  <script type="module" src="./src/js/login.js"></script>
 </body>
+
 </html>
